@@ -5,6 +5,7 @@ Live Template for Android Studio
 ```
 USER_PROFILE\.AndroidStudio***\config\templates
 ```
+# Methods:
 
 * cmvp - Check mvp view for null
 ```
