@@ -1,9 +1,9 @@
 # LIVETemplate
 Live Template for Android Studio
 
-* Path:
+<b>Path:</b>
 ```
-PROFILE\.AndroidStudio***\config\templates
+USER_PROFILE\.AndroidStudio***\config\templates
 ```
 
 * cmvp - Check mvp view for null
