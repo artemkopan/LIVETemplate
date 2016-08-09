@@ -1,0 +1,40 @@
+<templateSet group="Android">
+  <template name="sa1" value="private static final String KEY_$EXTRA_PARAM$ = &quot;KEY.$EXTRA_PARAM$&quot;;&#10;&#10;public static void startActivity(android.content.Context context, $EXTRA_CLASS$ $EXTRA_VAR$) {&#10;    context.startActivity(getIntent(context, $EXTRA_VAR$));&#10;}&#10;&#10;public static android.content.Intent getIntent(android.content.Context context, $EXTRA_CLASS$ $EXTRA_VAR$){&#10;    Intent intent = new Intent(context, $CLASS_NAME$.class);&#10;    intent.putExtra(KEY_$EXTRA_PARAM$, $EXTRA_VAR$);$END$&#10;    return intent;&#10;}" description="Create new Intent in Activity class" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="EXTRA_CLASS" expression="capitalizeAndUnderscore(EXTRA_VAR)&#9;" defaultValue="" alwaysStopAt="true" />
+    <variable name="EXTRA_VAR" expression="suggestVariableName" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS_NAME" expression="className" defaultValue="" alwaysStopAt="false" />
+    <variable name="EXTRA_PARAM" expression="capitalizeAndUnderscore(EXTRA_VAR)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="sa2" value="private static final String KEY_$EXTRA_PARAM1$ = &quot;KEY.$EXTRA_PARAM1$&quot;;&#10;private static final String KEY_$EXTRA_PARAM2$ = &quot;KEY.$EXTRA_PARAM2$&quot;;&#10;&#10;public static void startActivity(android.content.Context context, $EXTRA_CLASS1$ $EXTRA_VAR1$, $EXTRA_CLASS2$ $EXTRA_VAR2$) {&#10;    context.startActivity(getIntent(context, $EXTRA_VAR1$, $EXTRA_VAR2$));&#10;}&#10;&#10;public static android.content.Intent getIntent(android.content.Context context, $EXTRA_CLASS1$ $EXTRA_VAR1$, $EXTRA_CLASS2$ $EXTRA_VAR2$){&#10;    Intent intent = new Intent(context, $CLASS_NAME$.class);&#10;    intent.putExtra(KEY_$EXTRA_PARAM1$, $EXTRA_VAR1$);&#10;    intent.putExtra(KEY_$EXTRA_PARAM2$, $EXTRA_VAR2$);$END$&#10;    return intent;&#10;}" description="Create new Intent in Activity class" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="CLASS_NAME" expression="className" defaultValue="" alwaysStopAt="false" />
+    <variable name="EXTRA_CLASS1" expression="typeOfVariable(VAR)&#9;" defaultValue="" alwaysStopAt="true" />
+    <variable name="EXTRA_VAR1" expression="suggestVariableName" defaultValue="" alwaysStopAt="true" />
+    <variable name="EXTRA_CLASS2" expression="typeOfVariable(VAR)&#9;" defaultValue="" alwaysStopAt="true" />
+    <variable name="EXTRA_VAR2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="EXTRA_PARAM1" expression="capitalizeAndUnderscore(EXTRA_VAR1)&#9;" defaultValue="" alwaysStopAt="false" />
+    <variable name="EXTRA_PARAM2" expression="capitalizeAndUnderscore(EXTRA_VAR2)&#9;" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="fi1" value="private static final String $ARG_PARAM$ = &quot;$CLASS_NAME$.$ARG_PARAM$&quot;;&#10;&#10;private $ARG_CLASS_DITTO$ m$INST_VAR$;&#10;&#10;public static $CLASS_NAME$ newInstance($ARG_CLASS$ $ARG_VAR$) {&#10;    $CLASS_NAME$ fragment = new $CLASS_NAME$();&#10;    Bundle args = new Bundle();&#10;    args.put$ARG_CLASS$($ARG_PARAM$, $ARG_VAR$);&#10;    fragment.setArguments(args);&#10;    return fragment;&#10;}&#10;&#10;@Override&#10;public void onCreate(Bundle savedInstanceState) {&#10;    super.onCreate(savedInstanceState);&#10;    m$INST_VAR$ = getArguments().get$ARG_CLASS$($ARG_PARAM$);&#10;}" description="Add new instance fragment with 1 argument" toReformat="false" toShortenFQNames="true">
+    <variable name="ARG_CLASS" expression="typeOfVariable(VAR)" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARG_VAR" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARG_CLASS_DITTO" expression="ARG_CLASS" defaultValue="" alwaysStopAt="false" />
+    <variable name="ARG_PARAM" expression="capitalizeAndUnderscore(ARG_VAR)" defaultValue="" alwaysStopAt="false" />
+    <variable name="CLASS_NAME" expression="className" defaultValue="" alwaysStopAt="false" />
+    <variable name="INST_VAR" expression="capitalize(ARG_VAR)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="cmvp" value="if(getMvpView() != null){&#10;    $END$&#10;}" description="Check mvp view for null" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+      <option name="JAVA_DECLARATION" value="false" />
+    </context>
+  </template>
+</templateSet>
