@@ -8,7 +8,7 @@ USER_PROFILE\.AndroidStudio***\config\templates
 # Methods:
 
 * cmvp - Check mvp view for null
-```
+``` java
     if(getMvpView() != null){
         
     }
@@ -17,7 +17,7 @@ USER_PROFILE\.AndroidStudio***\config\templates
 * sa0 - Create startActivity() static method in Activity class; 
 * sa1 - /---/ create with one arguments
 * sa2 - /---/ create with two arguments
-```
+```java
     private static final String KEY_TEST_ID = "KEY.TEST_ID";
 
     public static void startActivity(Context context, String testId) {
@@ -34,7 +34,7 @@ USER_PROFILE\.AndroidStudio***\config\templates
 * fi0 - Create newInstance() static method in Fragment class;
 * fi1 - /---/ create with one arguments
 * fi2 - /---/ create with two arguments
-```
+```java
     private static final String KEY_ID = "KEY.ID";
 
     private String mId;
