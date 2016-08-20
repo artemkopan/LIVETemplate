@@ -65,4 +65,13 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
+  <template name="attr" value="if ($attr$ != null) {&#10;    TypedArray array = getContext().obtainStyledAttributes($attr_v$, R.styleable.$style$);&#10;    try {&#10;        $cursor$&#10;    } finally {&#10;        array.recycle();&#10;    }&#10;}" description="Create a attributes for custom view" toReformat="true" toShortenFQNames="true">
+    <variable name="attr" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="attr_v" expression="attr" defaultValue="" alwaysStopAt="false" />
+    <variable name="style" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="cursor" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
