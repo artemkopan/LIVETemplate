@@ -30,7 +30,7 @@
     <variable name="result" expression="variableOfType(methodReturnType())" defaultValue="" alwaysStopAt="true" />
     <context />
   </template>
-  <template name="logloop" value="com.artemkopan.baseproject.helper.Log.i(&quot;$METHOD_NAME$: &quot; + (Looper.myLooper() == Looper.getMainLooper()));" description="Log for check  main looper" toReformat="true" toShortenFQNames="true">
+  <template name="logloop" value="com.artemkopan.baseproject.helper.Log.i(&quot;$METHOD_NAME$: &quot; + (android.os.Looper.myLooper() == android.os.Looper.getMainLooper()));" description="Log for check  main looper" toReformat="true" toShortenFQNames="true">
     <variable name="METHOD_NAME" expression="methodName()" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_STATEMENT" value="true" />
