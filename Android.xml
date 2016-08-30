@@ -74,4 +74,10 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="ViewConstructors" value="public $class$(android.content.Context context) {&#10;    this(context, null, 0);&#10;}&#10;&#10;public $class$(Context context, android.util.AttributeSet attrs) {&#10;    this(context, attrs, 0);&#10;}&#10;&#10;public $class$(Context context, AttributeSet attrs, int defStyle) {&#10;    super(context, attrs, defStyle);&#10;    $copyCursor$&#10;}&#10;&#10;@TargetApi(Build.VERSION_CODES.LOLLIPOP)&#10;public $class$(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {&#10;    super(context, attrs, defStyleAttr, defStyleRes);&#10;    $cursor$&#10;}&#10;" description="Adds generic view constructors" toReformat="true" toShortenFQNames="true">
+    <variable name="cursor" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="copyCursor" expression="cursor" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
 </templateSet>
