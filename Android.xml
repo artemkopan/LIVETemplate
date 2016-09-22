@@ -1,5 +1,5 @@
 <templateSet group="Android">
-  <template name="sa1" value="private static final String KEY_$EXTRA_PARAM$ = &quot;KEY.$EXTRA_PARAM$&quot;;&#10;&#10;public static void startActivity(android.content.Context context, $EXTRA_CLASS$ $EXTRA_VAR$) {&#10;    android.content.Intent intent = new Intent(context, $CLASS_NAME$.class);&#10;    intent.putExtra(KEY_$EXTRA_PARAM$, $EXTRA_VAR$);$END$&#10;    context.startActivity(intent);&#10;}&#10;" description="Create new Intent in Activity class" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+  <template name="sa1" value="private static final String KEY_$EXTRA_PARAM$ = &quot;KEY.$EXTRA_PARAM$&quot;;&#10;&#10;public static void startActivity(android.app.Activity activity, $EXTRA_CLASS$ $EXTRA_VAR$) {&#10;    android.content.Intent intent = new Intent(activity, $CLASS_NAME$.class);&#10;    intent.putExtra(KEY_$EXTRA_PARAM$, $EXTRA_VAR$);$END$&#10;    android.os.Bundle bundle = android.support.v4.app.ActivityOptionsCompat.makeBasic().toBundle();&#10;    android.support.v4.app.ActivityCompat.startActivity(activity, intent, bundle);&#10;}&#10;" description="Create new Intent in Activity class" toReformat="true" toShortenFQNames="true">
     <variable name="EXTRA_CLASS" expression="capitalizeAndUnderscore(EXTRA_VAR)&#9;" defaultValue="" alwaysStopAt="true" />
     <variable name="EXTRA_VAR" expression="suggestVariableName" defaultValue="" alwaysStopAt="true" />
     <variable name="EXTRA_PARAM" expression="capitalizeAndUnderscore(EXTRA_VAR)" defaultValue="" alwaysStopAt="false" />
@@ -8,7 +8,7 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="sa2" value="private static final String KEY_$EXTRA_PARAM1$ = &quot;KEY.$EXTRA_PARAM1$&quot;;&#10;private static final String KEY_$EXTRA_PARAM2$ = &quot;KEY.$EXTRA_PARAM2$&quot;;&#10;&#10;public static void startActivity(android.content.Context context, $EXTRA_CLASS1$ $EXTRA_VAR1$, $EXTRA_CLASS2$ $EXTRA_VAR2$) {&#10;    android.content.Intent intent = new Intent(context, $CLASS_NAME$.class);&#10;    intent.putExtra(KEY_$EXTRA_PARAM1$, $EXTRA_VAR1$);&#10;    intent.putExtra(KEY_$EXTRA_PARAM2$, $EXTRA_VAR2$);$END$&#10;    context.startActivity(intent);&#10;}&#10;" description="Create new Intent in Activity class" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+  <template name="sa2" value="private static final String KEY_$EXTRA_PARAM1$ = &quot;KEY.$EXTRA_PARAM1$&quot;;&#10;private static final String KEY_$EXTRA_PARAM2$ = &quot;KEY.$EXTRA_PARAM2$&quot;;&#10;&#10;public static void startActivity(android.app.Activity activity, $EXTRA_CLASS1$ $EXTRA_VAR1$, $EXTRA_CLASS2$ $EXTRA_VAR2$) {&#10;    android.content.Intent intent = new Intent(activity, $CLASS_NAME$.class);&#10;    intent.putExtra(KEY_$EXTRA_PARAM1$, $EXTRA_VAR1$);&#10;    intent.putExtra(KEY_$EXTRA_PARAM2$, $EXTRA_VAR2$);$END$&#10;    android.os.Bundle bundle = android.support.v4.app.ActivityOptionsCompat.makeBasic().toBundle();&#10;    android.support.v4.app.ActivityCompat.startActivity(activity, intent, bundle);&#10;}&#10;" description="Create new Intent in Activity class" toReformat="true" toShortenFQNames="true">
     <variable name="EXTRA_CLASS1" expression="typeOfVariable(VAR)&#9;" defaultValue="" alwaysStopAt="true" />
     <variable name="EXTRA_VAR1" expression="suggestVariableName" defaultValue="" alwaysStopAt="true" />
     <variable name="EXTRA_CLASS2" expression="typeOfVariable(VAR)&#9;" defaultValue="" alwaysStopAt="true" />
@@ -59,7 +59,7 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="sa0" value="public static void startActivity(android.content.Context context) {&#10;    android.content.Intent intent = new Intent(context, $CLASS_NAME$.class);&#10;    context.startActivity(intent);&#10;}&#10;" description="Create new Intent in Activity class" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+  <template name="sa0" value="public static void startActivity(android.app.Activity activity) {&#10;    android.content.Intent intent = new Intent(activity, $CLASS_NAME$.class);&#10;    android.os.Bundle bundle = android.support.v4.app.ActivityOptionsCompat.makeBasic().toBundle();&#10;    android.support.v4.app.ActivityCompat.startActivity(activity, intent, bundle);&#10;}&#10;&#10;" description="Create new Intent in Activity class" toReformat="true" toShortenFQNames="true">
     <variable name="CLASS_NAME" expression="className()" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
